@@ -12,7 +12,16 @@ const jakImages = [
   "015-forearm-banksia.jpg",
 ];
 
-const pipImageCount = 8;
+const pipImages = [
+  "piptattoo01.jpg",
+  "piptattoo02.jpg",
+  "piptattoo03.jpg",
+  "piptattoo04.jpg",
+  "piptattoo05.jpg",
+  "piptattoo06.jpg",
+  "piptattoo07.jpg",
+  "piptattoo08.jpg",
+];
 
 const reviewImages = [
   "review-01.png",
@@ -54,13 +63,13 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32">
-          <h1 className="flex items-center gap-4 md:gap-6 mb-8 w-full max-w-4xl justify-center">
+          <h1 className="flex items-center gap-4 md:gap-6 mb-8 w-full max-w-4xl">
             <Image
               src="/Branding/tt-logo.jpg"
               alt="Together Tattoo logo"
               width={120}
               height={120}
-              className="invert h-auto w-[15%] flex-shrink-0"
+              className="invert h-16 md:h-28 w-auto flex-shrink-0"
               priority
             />
             <Image
@@ -68,7 +77,7 @@ export default function Home() {
               alt="Together Tattoo"
               width={600}
               height={266}
-              className="invert h-auto flex-1 min-w-0"
+              className="invert h-16 md:h-28 w-auto flex-1 min-w-0 object-contain object-left"
               priority
             />
           </h1>
@@ -116,38 +125,47 @@ export default function Home() {
 
         {/* Artists Section */}
         <section id="artists" className="px-4 py-16">
+          <h2 className="text-3xl font-semibold text-center mb-16">Our Artists</h2>
 
           {/* Pip Tattoos */}
           <div className="max-w-6xl mx-auto mb-20">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8 px-2">
-              <div className="w-24 h-24 relative flex-shrink-0 rounded-full overflow-hidden bg-gray-800">
-                <div className="w-full h-full flex items-center justify-center text-gray-500 text-xs">
-                  Photo
-                </div>
+              <div className="w-24 h-24 relative flex-shrink-0 rounded-full overflow-hidden">
+                <Image
+                  src="/portfolio/pip/pipprofile.jpg"
+                  alt="Pip - Tattoo Artist"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <div className="text-center md:text-left">
-                <h2 className="text-2xl font-semibold mb-2">Pip Tattoos</h2>
+                <h3 className="text-2xl font-semibold mb-2">Pip Tattoos</h3>
                 <p className="text-gray-300 mb-3">
                   Tattoo designs created using lino printing techniques.
                 </p>
-                <p className="text-gray-400 text-sm">
-                  Contact Pip via{" "}
-                  <Link
-                    href="https://instagram.com/pip.irene"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-white text-black px-4 py-1 rounded-full hover:bg-gray-200 transition-colors font-medium"
-                  >
-                    Instagram
-                  </Link>
-                  {" "}or email togethertattoo@proton.me
+                <p className="text-gray-400 text-sm mb-3">
+                  Contact Pip via Instagram or email togethertattoo@proton.me
                 </p>
+                <Link
+                  href="https://instagram.com/pip.irene"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
+                >
+                  @pip.irene
+                </Link>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-              {Array.from({ length: pipImageCount }).map((_, index) => (
-                <div key={index} className="aspect-square relative overflow-hidden bg-gray-900 flex items-center justify-center">
-                  <span className="text-gray-600 text-sm">Coming soon</span>
+              {pipImages.map((image, index) => (
+                <div key={index} className="aspect-square relative overflow-hidden">
+                  <Image
+                    src={`/portfolio/pip/${image}`}
+                    alt={`Tattoo by Pip - ${index + 1}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
                 </div>
               ))}
             </div>
@@ -168,7 +186,7 @@ export default function Home() {
                 />
               </div>
               <div className="text-center md:text-left">
-                <h2 className="text-2xl font-semibold mb-2">Jak Rapmund</h2>
+                <h3 className="text-2xl font-semibold mb-2">Jak Rapmund</h3>
                 <p className="text-gray-300 mb-3">
                   Fine line, blackwork, and botanical tattoos. Black ink only. 13 years experience across studios in Berlin, New York, Paris, Hong Kong, and Seoul.
                 </p>
