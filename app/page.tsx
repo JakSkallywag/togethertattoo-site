@@ -98,9 +98,17 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="px-6 py-16 max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold text-center mb-6">About the Studio</h2>
-          <p className="text-gray-300 text-center">
+          <p className="text-gray-300 text-center mb-8">
             Together Tattoo is a custom tattoo studio based in Castlemaine, in the heart of central Victoria. We focus on creating one-of-a-kind tattoos in a comfortable, welcoming environment.
           </p>
+          <div className="aspect-[16/10] relative overflow-hidden rounded-lg">
+            <Image
+              src="/Branding/us-2.jpg"
+              alt="Pip and Jak outside Together Tattoo studio"
+              fill
+              className="object-cover"
+            />
+          </div>
         </section>
 
         {/* Separator */}
