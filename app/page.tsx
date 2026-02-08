@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import ContactForm from "@/components/contact-form";
 
 const jakImages = [
   "02-Head-Lillys.jpg",
@@ -32,9 +31,6 @@ export default function Home() {
             </Link>
             <Link href="#about" className="text-gray-400 hover:text-white transition-colors text-sm">
               About
-            </Link>
-            <Link href="#contact" className="text-gray-400 hover:text-white transition-colors text-sm">
-              Contact
             </Link>
           </div>
         </div>
@@ -128,20 +124,20 @@ export default function Home() {
                 <p className="text-gray-300 mb-3">
                   Tattoo designs created using lino printing techniques.
                 </p>
-                <div className="flex gap-4 justify-center md:justify-start">
-                  <Link
-                    href="#contact"
-                    className="bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
-                  >
-                    Contact Pip
-                  </Link>
+                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
                   <Link
                     href="https://instagram.com/pip.irene"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors text-sm flex items-center"
+                    className="bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
                   >
                     @pip.irene
+                  </Link>
+                  <Link
+                    href="mailto:togethertattoo@proton.me"
+                    className="border border-gray-700 text-white px-5 py-2 rounded-full hover:border-gray-500 transition-colors text-sm"
+                  >
+                    togethertattoo@proton.me
                   </Link>
                 </div>
               </div>
@@ -162,11 +158,6 @@ export default function Home() {
           <p className="text-gray-300 text-center">
             Together Tattoo is a custom tattoo studio based in Castlemaine, in the heart of central Victoria. We focus on creating one-of-a-kind tattoos in a comfortable, welcoming environment.
           </p>
-        </section>
-
-        {/* Contact Form (for Pip) */}
-        <section id="contact" className="px-6 py-16 border-t border-gray-800">
-          <ContactForm />
         </section>
 
         {/* Footer */}
