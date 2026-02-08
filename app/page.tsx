@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import BookingForm from "@/components/booking-form";
 
 const jakImages = [
   "02-Head-Lillys.jpg",
@@ -51,6 +52,9 @@ export default function Home() {
             </Link>
             <Link href="#artists" className="text-gray-400 hover:text-white transition-colors text-sm">
               Artists
+            </Link>
+            <Link href="#book" className="text-gray-400 hover:text-white transition-colors text-sm">
+              Book
             </Link>
             <Link href="#find-us" className="text-gray-400 hover:text-white transition-colors text-sm">
               Find Us
@@ -224,6 +228,11 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Booking Form Section */}
+        <section id="book" className="py-16 px-6 border-t border-gray-800">
+          <BookingForm />
         </section>
 
         {/* Testimonials Section */}
