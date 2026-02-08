@@ -110,22 +110,18 @@ export default function Home() {
                 <p className="text-gray-300 mb-3">
                   Tattoo designs created using lino printing techniques.
                 </p>
-                <div className="flex flex-wrap gap-4 justify-center md:justify-start">
+                <p className="text-gray-400 text-sm">
+                  Contact Pip via{" "}
                   <Link
                     href="https://instagram.com/pip.irene"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
+                    className="inline-block bg-white text-black px-4 py-1 rounded-full hover:bg-gray-200 transition-colors font-medium"
                   >
-                    @pip.irene
+                    Instagram
                   </Link>
-                  <Link
-                    href="mailto:togethertattoo@proton.me"
-                    className="border border-gray-700 text-white px-5 py-2 rounded-full hover:border-gray-500 transition-colors text-sm"
-                  >
-                    togethertattoo@proton.me
-                  </Link>
-                </div>
+                  {" "}or email togethertattoo@proton.me
+                </p>
               </div>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
@@ -224,7 +220,7 @@ export default function Home() {
           <div className="max-w-4xl mx-auto px-6">
             <div className="aspect-[16/9] rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25296.05651337529!2d144.20!3d-37.07!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad7610c0c0b0b0b%3A0x0!2sCastlemaine%20VIC!5e0!3m2!1sen!2sau!4v1700000000000"
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d100867.3795312821!2d144.982016!3d-37.8109952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad73732da393915%3A0x2686d805177e7676!2sTogether%20Tattoo!5e0!3m2!1sen!2sau!4v1770575181443!5m2!1sen!2sau"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -235,7 +231,7 @@ export default function Home() {
               />
             </div>
             <p className="text-gray-400 text-center mt-4">
-              Castlemaine, Victoria
+              Halford Street, Castlemaine, VIC
             </p>
           </div>
         </section>
