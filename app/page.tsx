@@ -54,13 +54,13 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32">
-          <h1 className="flex items-center gap-4 md:gap-6 mb-8">
+          <h1 className="flex items-center gap-4 md:gap-6 mb-8 w-full max-w-4xl justify-center">
             <Image
               src="/Branding/tt-logo.jpg"
               alt="Together Tattoo logo"
               width={120}
               height={120}
-              className="invert h-16 md:h-24 w-auto"
+              className="invert h-auto w-[15%] flex-shrink-0"
               priority
             />
             <Image
@@ -68,7 +68,7 @@ export default function Home() {
               alt="Together Tattoo"
               width={600}
               height={266}
-              className="invert h-16 md:h-24 w-auto"
+              className="invert h-auto flex-1 min-w-0"
               priority
             />
           </h1>
