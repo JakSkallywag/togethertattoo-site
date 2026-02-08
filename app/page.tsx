@@ -54,29 +54,34 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32">
-          <h1 className="text-5xl md:text-7xl font-bold text-center mb-6 tracking-tight">
-            Together Tattoo
+          <h1 className="mb-6">
+            <Image
+              src="/Branding/tt-title.jpg"
+              alt="Together Tattoo"
+              width={600}
+              height={266}
+              className="invert w-auto h-auto max-w-[80vw] md:max-w-[500px]"
+              priority
+            />
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 text-center mb-3 font-light">
             Custom Tattoo Studio
           </p>
-          <p className="text-base text-gray-500 mb-8">
+          <p className="text-base text-gray-500">
             Castlemaine, Victoria
           </p>
-          <Link
-            href="https://instagram.com/togethertattoo"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white transition-colors text-sm"
-          >
-            @togethertattoo
-          </Link>
         </section>
 
-        {/* Studio Photo Placeholder */}
+        {/* Studio Photo */}
         <section className="px-4 max-w-4xl mx-auto mb-16">
-          <div className="aspect-[16/9] relative overflow-hidden rounded-lg bg-gray-900 flex items-center justify-center">
-            <span className="text-gray-600">Studio photo coming soon</span>
+          <div className="aspect-[16/9] relative overflow-hidden rounded-lg">
+            <Image
+              src="/Branding/pip-in-studio.jpg"
+              alt="Inside Together Tattoo studio"
+              fill
+              className="object-cover"
+              priority
+            />
           </div>
         </section>
 
