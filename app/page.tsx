@@ -54,6 +54,26 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32">
+          <Image
+            src="/Branding/tt-logo.jpg"
+            alt="Together Tattoo logo"
+            width={120}
+            height={120}
+            className="invert w-auto h-auto max-w-[100px] md:max-w-[120px] mb-8"
+            priority
+          />
+
+          {/* Studio Photo */}
+          <div className="w-full max-w-4xl aspect-[16/9] relative overflow-hidden rounded-lg mb-8">
+            <Image
+              src="/Branding/pip-in-studio.jpg"
+              alt="Inside Together Tattoo studio"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+
           <h1 className="mb-6">
             <Image
               src="/Branding/tt-title.jpg"
@@ -70,19 +90,6 @@ export default function Home() {
           <p className="text-base text-gray-500">
             Castlemaine, Victoria
           </p>
-        </section>
-
-        {/* Studio Photo */}
-        <section className="px-4 max-w-4xl mx-auto mb-16">
-          <div className="aspect-[16/9] relative overflow-hidden rounded-lg">
-            <Image
-              src="/Branding/pip-in-studio.jpg"
-              alt="Inside Together Tattoo studio"
-              fill
-              className="object-cover"
-              priority
-            />
-          </div>
         </section>
 
         {/* Separator */}
