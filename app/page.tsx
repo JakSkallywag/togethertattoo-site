@@ -54,14 +54,24 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32">
-          <Image
-            src="/Branding/tt-logo.jpg"
-            alt="Together Tattoo logo"
-            width={120}
-            height={120}
-            className="invert w-auto h-auto max-w-[100px] md:max-w-[120px] mb-8"
-            priority
-          />
+          <h1 className="flex items-center gap-4 md:gap-6 mb-8">
+            <Image
+              src="/Branding/tt-logo.jpg"
+              alt="Together Tattoo logo"
+              width={120}
+              height={120}
+              className="invert h-16 md:h-24 w-auto"
+              priority
+            />
+            <Image
+              src="/Branding/tt-title.jpg"
+              alt="Together Tattoo"
+              width={600}
+              height={266}
+              className="invert h-16 md:h-24 w-auto"
+              priority
+            />
+          </h1>
 
           {/* Studio Photo */}
           <div className="w-full max-w-4xl aspect-[16/9] relative overflow-hidden rounded-lg mb-8">
@@ -74,16 +84,6 @@ export default function Home() {
             />
           </div>
 
-          <h1 className="mb-6">
-            <Image
-              src="/Branding/tt-title.jpg"
-              alt="Together Tattoo"
-              width={600}
-              height={266}
-              className="invert w-auto h-auto max-w-[80vw] md:max-w-[500px]"
-              priority
-            />
-          </h1>
           <p className="text-xl md:text-2xl text-gray-300 text-center mb-3 font-light">
             Custom Tattoo Studio
           </p>
