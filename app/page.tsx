@@ -151,12 +151,12 @@ export default function Home() {
                   Contact Pip via Instagram or email togethertattoo@proton.me
                 </p>
                 <Link
-                  href="https://instagram.com/pip.irene"
+                  href="https://instagram.com/pip.tattoos"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
                 >
-                  @pip.irene
+                  @pip.tattoos
                 </Link>
               </div>
             </div>
@@ -294,8 +294,8 @@ export default function Home() {
                 <Link href="https://instagram.com/jakrapmund" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   @jakrapmund
                 </Link>
-                <Link href="https://instagram.com/pip.irene" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                  @pip.irene
+                <Link href="https://instagram.com/pip.tattoos" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                  @pip.tattoos
                 </Link>
               </div>
               <p className="text-gray-500 text-sm">

@@ -71,7 +71,7 @@ export default function RootLayout({
     url: "https://www.togethertattoo.com",
     sameAs: [
       "https://instagram.com/jakrapmund",
-      "https://instagram.com/pip.irene",
+      "https://instagram.com/pip.tattoos",
     ],
     address: {
       "@type": "PostalAddress",
@@ -91,7 +91,7 @@ export default function RootLayout({
         "@type": "Person",
         name: "Pip",
         jobTitle: "Tattoo Artist",
-        sameAs: "https://instagram.com/pip.irene",
+        sameAs: "https://instagram.com/pip.tattoos",
       },
     ],
   };
