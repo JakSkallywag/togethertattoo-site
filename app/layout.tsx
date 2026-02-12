@@ -53,6 +53,9 @@ export const metadata: Metadata = {
     title: "Together Tattoo | Custom Tattoo Studio | Castlemaine",
     description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and surrounds.",
   },
+  verification: {
+    google: "qAxdcXxJnE0CfTUPYTguTHV_214x1nu-QoV5GTkr6xM",
+  },
   robots: {
     index: true,
     follow: true,
