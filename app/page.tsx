@@ -45,7 +45,16 @@ export default function Home() {
       {/* Navigation */}
       <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-sm border-b border-gray-800 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-white font-semibold tracking-wide">Together Tattoo</span>
+          <div className="flex items-center gap-2">
+            <Image
+              src="/Branding/tt-logo.jpg"
+              alt="Together Tattoo logo"
+              width={28}
+              height={28}
+              className="invert h-7 w-auto"
+            />
+            <span className="text-white font-semibold tracking-wide">Together Tattoo</span>
+          </div>
           <div className="flex gap-6 items-center">
             <Link href="#about" className="text-gray-400 hover:text-white transition-colors text-sm">
               About
@@ -67,13 +76,13 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32">
-          <h1 className="flex items-center gap-4 md:gap-6 mb-8 w-full max-w-4xl">
+          <h1 className="flex items-center justify-center gap-4 md:gap-8 mb-8 w-full max-w-4xl">
             <Image
               src="/Branding/tt-logo.jpg"
               alt="Together Tattoo logo"
               width={120}
               height={120}
-              className="invert h-16 md:h-28 w-auto flex-shrink-0"
+              className="invert h-20 md:h-36 w-auto flex-shrink-0"
               priority
             />
             <Image
@@ -81,7 +90,7 @@ export default function Home() {
               alt="Together Tattoo"
               width={600}
               height={266}
-              className="invert h-16 md:h-28 w-auto flex-1 min-w-0 object-contain object-left"
+              className="invert h-20 md:h-36 w-auto flex-shrink-0 object-contain"
               priority
             />
           </h1>
@@ -111,8 +120,11 @@ export default function Home() {
         {/* About Section */}
         <section id="about" className="px-6 py-16 max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold text-center mb-6">About the Studio</h2>
+          <p className="text-gray-300 text-center mb-4">
+            Together Tattoo is a custom tattoo studio on Dja Dja Wurrung country, Castlemaine. We focus on providing tattoos of the highest quality, working with you to bring your vision to life.
+          </p>
           <p className="text-gray-300 text-center mb-8">
-            Together Tattoo is a custom tattoo studio based in Castlemaine, in the heart of central Victoria. We focus on creating one-of-a-kind tattoos in a comfortable, welcoming environment.
+            We provide a calming environment for what is sometimes a difficult and painful experience. We always play chill music, have low lighting to reduce distraction and make your tattoo as comfortable as possible.
           </p>
           <div className="aspect-[16/10] relative overflow-hidden rounded-lg">
             <Image
