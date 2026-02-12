@@ -37,6 +37,8 @@ const reviewImages = [
   "review-011.png",
   "review-012.png",
   "review-013.png",
+  "review-014.png",
+  "review-015.png",
 ];
 
 export default function Home() {
