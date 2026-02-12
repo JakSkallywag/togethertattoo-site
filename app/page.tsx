@@ -131,55 +131,8 @@ export default function Home() {
         <section id="artists" className="px-4 py-16">
           <h2 className="text-3xl font-semibold text-center mb-16">Our Artists</h2>
 
-          {/* Pip Tattoos */}
-          <div className="max-w-6xl mx-auto mb-20">
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8 px-2">
-              <div className="w-24 h-24 relative flex-shrink-0 rounded-full overflow-hidden">
-                <Image
-                  src="/portfolio/pip/pipprofile.jpg"
-                  alt="Pip - Tattoo Artist"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="text-center md:text-left">
-                <h3 className="text-2xl font-semibold mb-2">Pip Tattoos</h3>
-                <p className="text-gray-300 mb-3">
-                  Tattoo designs created using lino printing techniques.
-                </p>
-                <p className="text-gray-400 text-sm mb-3">
-                  Contact Pip via Instagram or email togethertattoo@proton.me
-                </p>
-                <Link
-                  href="https://instagram.com/pip.tattoos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
-                >
-                  @pip.tattoos
-                </Link>
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-              {pipImages.map((image, index) => (
-                <div key={index} className="aspect-square relative overflow-hidden">
-                  <Image
-                    src={`/portfolio/pip/${image}`}
-                    alt={`Tattoo by Pip - ${index + 1}`}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Separator */}
-          <div className="border-t border-white/10 mx-auto max-w-4xl mb-20"></div>
-
           {/* Jak Rapmund */}
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-6xl mx-auto mb-20">
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8 px-2">
               <div className="w-24 h-24 relative flex-shrink-0 rounded-full overflow-hidden">
                 <Image
@@ -228,6 +181,60 @@ export default function Home() {
               ))}
             </div>
           </div>
+
+          {/* Separator */}
+          <div className="border-t border-white/10 mx-auto max-w-4xl mb-20"></div>
+
+          {/* Pip Tattoo */}
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-8 px-2">
+              <div className="w-24 h-24 relative flex-shrink-0 rounded-full overflow-hidden">
+                <Image
+                  src="/portfolio/pip/pipprofile.jpg"
+                  alt="Pip - Tattoo Artist"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="text-center md:text-left">
+                <h3 className="text-2xl font-semibold mb-2">Pip Tattoo</h3>
+                <p className="text-gray-300 mb-3">
+                  Tattoo designs created using lino printing techniques.
+                </p>
+                <div className="flex gap-4 justify-center md:justify-start">
+                  <Link
+                    href="https://www.piptattoo.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
+                  >
+                    Book with Pip
+                  </Link>
+                  <Link
+                    href="https://instagram.com/pip.tattoo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-400 hover:text-white transition-colors text-sm flex items-center"
+                  >
+                    @pip.tattoo
+                  </Link>
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
+              {pipImages.map((image, index) => (
+                <div key={index} className="aspect-square relative overflow-hidden">
+                  <Image
+                    src={`/portfolio/pip/${image}`}
+                    alt={`Tattoo by Pip - ${index + 1}`}
+                    fill
+                    className="object-cover hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
 
         {/* Booking Form Section */}
@@ -263,7 +270,10 @@ export default function Home() {
 
         {/* Find Us / Google Maps Section */}
         <section id="find-us" className="py-16 border-t border-gray-800">
-          <h2 className="text-2xl font-semibold text-center mb-8">Find Us</h2>
+          <h2 className="text-2xl font-semibold text-center mb-4">Find Us</h2>
+          <p className="text-gray-400 text-center max-w-lg mx-auto px-6 mb-8">
+            Together Tattoo is based in Castlemaine — a short drive from Daylesford, Kyneton, and Bendigo. We&apos;ve had clients come from as far as Ballarat and Melbourne. There&apos;s also a direct train from Melbourne through to Bendigo that stops right in Castlemaine.
+          </p>
           <div className="max-w-4xl mx-auto px-6">
             <div className="aspect-[16/9] rounded-lg overflow-hidden">
               <iframe
@@ -294,8 +304,8 @@ export default function Home() {
                 <Link href="https://instagram.com/jakrapmund" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
                   @jakrapmund
                 </Link>
-                <Link href="https://instagram.com/pip.tattoos" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
-                  @pip.tattoos
+                <Link href="https://instagram.com/pip.tattoo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                  @pip.tattoo
                 </Link>
               </div>
               <p className="text-gray-500 text-sm">
