@@ -85,6 +85,8 @@ export default function BookingForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
 
+  const [honeypot, setHoneypot] = useState("");
+
   const [formData, setFormData] = useState<FormData>({
     artist: "",
     isCoverUp: null,
@@ -154,6 +156,7 @@ export default function BookingForm() {
           placement: selectedPlacement?.label || formData.placement,
           availability: selectedAvailability?.label || formData.availability,
           isCoverUp: formData.isCoverUp,
+          website: honeypot,
         }),
       });
 
@@ -214,6 +217,18 @@ export default function BookingForm() {
   return (
     <div className="max-w-xl mx-auto">
       <h2 className="text-2xl font-semibold text-center mb-8">Book a Tattoo</h2>
+
+      {/* Honeypot field — hidden from humans, bots fill it in */}
+      <div className="absolute opacity-0 top-0 left-0 h-0 w-0 -z-10" aria-hidden="true">
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
 
       <ProgressBar />
 
