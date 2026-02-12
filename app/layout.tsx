@@ -15,8 +15,9 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.togethertattoo.com"),
   title: "Together Tattoo | Custom Tattoo Studio | Castlemaine, VIC",
-  description: "Custom tattoo studio in Castlemaine, Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos by Jak Rapmund and Pip Tattoos.",
+  description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and central Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos by Jak Rapmund and Pip Tattoo.",
   keywords: [
     "tattoo studio Castlemaine",
     "tattoo artist Castlemaine",
@@ -29,6 +30,13 @@ export const metadata: Metadata = {
     "blackwork tattoos",
     "botanical tattoos",
     "lino print tattoos",
+    "tattoo Daylesford",
+    "tattoo artist Daylesford",
+    "tattoo Kyneton",
+    "tattoo artist Kyneton",
+    "tattoo Bendigo",
+    "tattoo artist Bendigo",
+    "tattoo central Victoria",
   ],
   authors: [{ name: "Together Tattoo" }],
   creator: "Together Tattoo",
@@ -38,12 +46,12 @@ export const metadata: Metadata = {
     url: "https://www.togethertattoo.com",
     siteName: "Together Tattoo",
     title: "Together Tattoo | Custom Tattoo Studio | Castlemaine, VIC",
-    description: "Custom tattoo studio in Castlemaine, Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos.",
+    description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and central Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Together Tattoo | Custom Tattoo Studio | Castlemaine",
-    description: "Custom tattoo studio in Castlemaine, Victoria.",
+    description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and surrounds.",
   },
   robots: {
     index: true,
@@ -67,18 +75,29 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "TattooParlor",
     name: "Together Tattoo",
-    description: "Custom tattoo studio in Castlemaine, Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos.",
+    description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and central Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos.",
     url: "https://www.togethertattoo.com",
     sameAs: [
+      "https://instagram.com/togethertattoo",
       "https://instagram.com/jakrapmund",
-      "https://instagram.com/pip.tattoos",
+      "https://instagram.com/pip.tattoo",
     ],
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Halford Street",
       addressLocality: "Castlemaine",
       addressRegion: "VIC",
+      postalCode: "3450",
       addressCountry: "AU",
     },
+    areaServed: [
+      { "@type": "City", name: "Castlemaine", containedInPlace: { "@type": "State", name: "Victoria" } },
+      { "@type": "City", name: "Daylesford", containedInPlace: { "@type": "State", name: "Victoria" } },
+      { "@type": "City", name: "Kyneton", containedInPlace: { "@type": "State", name: "Victoria" } },
+      { "@type": "City", name: "Bendigo", containedInPlace: { "@type": "State", name: "Victoria" } },
+      { "@type": "City", name: "Ballarat", containedInPlace: { "@type": "State", name: "Victoria" } },
+      { "@type": "City", name: "Melbourne", containedInPlace: { "@type": "State", name: "Victoria" } },
+    ],
     employee: [
       {
         "@type": "Person",
@@ -91,7 +110,8 @@ export default function RootLayout({
         "@type": "Person",
         name: "Pip",
         jobTitle: "Tattoo Artist",
-        sameAs: "https://instagram.com/pip.tattoos",
+        url: "https://www.piptattoo.com",
+        sameAs: "https://instagram.com/pip.tattoo",
       },
     ],
   };
