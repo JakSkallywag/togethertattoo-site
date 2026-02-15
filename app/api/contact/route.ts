@@ -133,6 +133,7 @@ export async function POST(request: Request) {
     // Auto-reply to the client
     await resend.emails.send({
       from: `${config.fromName} <${config.fromEmail}>`,
+      replyTo: "togethertattoo@protonmail.com",
       to: email,
       subject: "Thanks for your tattoo inquiry!",
       html: `
