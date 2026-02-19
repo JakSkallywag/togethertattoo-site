@@ -50,6 +50,7 @@ export async function POST(request: Request) {
       placement,
       availability,
       isCoverUp,
+      referralSource,
       website,
     } = body;
 
@@ -81,6 +82,7 @@ export async function POST(request: Request) {
       (pronouns && pronouns.length > MAX_FIELD_LENGTH) ||
       description.length > MAX_DESCRIPTION_LENGTH ||
       (artistLabel && artistLabel.length > MAX_FIELD_LENGTH) ||
+      (referralSource && referralSource.length > MAX_FIELD_LENGTH) ||
       (size && size.length > MAX_FIELD_LENGTH) ||
       placement.length > MAX_FIELD_LENGTH ||
       availability.length > MAX_FIELD_LENGTH
@@ -97,6 +99,7 @@ export async function POST(request: Request) {
     const safePronouns = escapeHtml(pronouns || "");
     const safeDescription = escapeHtml(description);
     const safeArtistLabel = escapeHtml(artistLabel || "");
+    const safeReferralSource = escapeHtml(referralSource || "");
     const safeSize = escapeHtml(size || "");
     const safePlacement = escapeHtml(placement);
     const safeAvailability = escapeHtml(availability);
@@ -126,6 +129,9 @@ export async function POST(request: Request) {
 
           <h3>Their Description</h3>
           <p>${safeDescription}</p>
+
+          ${safeReferralSource ? `<h3>How They Found You</h3>
+          <p>${safeReferralSource}</p>` : ""}
         `,
       });
     }

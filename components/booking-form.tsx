@@ -74,6 +74,7 @@ type FormData = {
   phone: string;
   pronouns: string;
   pronounsOther: string;
+  referralSource: string;
   isOver18: boolean;
 };
 
@@ -100,6 +101,7 @@ export default function BookingForm() {
     phone: "",
     pronouns: "",
     pronounsOther: "",
+    referralSource: "",
     isOver18: false,
   });
 
@@ -156,6 +158,7 @@ export default function BookingForm() {
           placement: selectedPlacement?.label || formData.placement,
           availability: selectedAvailability?.label || formData.availability,
           isCoverUp: formData.isCoverUp,
+          referralSource: formData.referralSource,
           website: honeypot,
         }),
       });
@@ -435,6 +438,15 @@ export default function BookingForm() {
                   className="w-full mt-3 p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
                 />
               )}
+            </div>
+            <div>
+              <input
+                type="text"
+                value={formData.referralSource}
+                onChange={(e) => setFormData({ ...formData, referralSource: e.target.value })}
+                placeholder="How did you hear about us? (optional)"
+                className="w-full p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
+              />
             </div>
             <div className="pt-2">
               <label className="flex items-start gap-3 cursor-pointer">
