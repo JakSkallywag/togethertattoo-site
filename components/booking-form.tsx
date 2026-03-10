@@ -211,7 +211,7 @@ export default function BookingForm() {
         <div className="text-4xl mb-4">✓</div>
         <h2 className="text-2xl font-semibold mb-4">Thank you!</h2>
         <p className="text-gray-400">
-          We&apos;ve received your inquiry. Please check your email for confirmation and next steps.
+          We&apos;ve received your enquiry. Please check your email for confirmation and next steps.
         </p>
       </div>
     );

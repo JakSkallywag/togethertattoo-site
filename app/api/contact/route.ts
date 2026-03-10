@@ -109,9 +109,9 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from: `Together Tattoo <inquiries@togethertattoo.com>`,
         to: recipient,
-        subject: `New Tattoo Inquiry from ${safeName}`,
+        subject: `New Tattoo Enquiry from ${safeName}`,
         html: `
-          <h2>New Tattoo Inquiry</h2>
+          <h2>New Tattoo Enquiry</h2>
 
           <h3>Artist Requested</h3>
           <p><strong>${safeArtistLabel}</strong></p>
@@ -141,10 +141,10 @@ export async function POST(request: Request) {
       from: `${config.fromName} <${config.fromEmail}>`,
       replyTo: "togethertattoo@protonmail.com",
       to: email,
-      subject: "Thanks for your tattoo inquiry!",
+      subject: "Thanks for your tattoo enquiry!",
       html: `
         <h2>Thanks for reaching out, ${escapeHtml(name.split(" ")[0])}!</h2>
-        <p>We've received your inquiry and will get back to you as soon as we can. Thank you for your patience!</p>
+        <p>We've received your enquiry and will get back to you as soon as we can. Thank you for your patience!</p>
 
         <h3>What You Told Us</h3>
         <ul>
@@ -158,7 +158,7 @@ export async function POST(request: Request) {
 
         <h3>Next Steps</h3>
         <p>Please reply to this email with any reference images you have for your tattoo idea. This helps us understand your vision.</p>
-        <p>We'll send through available dates and times once we've had a chance to review your inquiry.</p>
+        <p>We'll send through available dates and times once we've had a chance to review your enquiry.</p>
         <p>Once we've locked in a date, a deposit will be taken to confirm your appointment, which comes off the final price of the tattoo.</p>
         <p>If you have any further questions, please don't hesitate to ask!</p>
 
