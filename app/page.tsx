@@ -25,20 +25,17 @@ const pipImages = [
 ];
 
 const reviewImages = [
+  "review-0.png",
   "review-01.png",
   "review-02.png",
   "review-03.png",
   "review-04.png",
-  "review-05.png",
-  "review-06.png",
   "review-07.png",
+  "review-08.png",
   "review-09.png",
   "review-010.png",
   "review-011.png",
   "review-012.png",
-  "review-013.png",
-  "review-014.png",
-  "review-015.png",
 ];
 
 export default function Home() {
@@ -251,11 +248,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Booking Form Section */}
-        <section id="book" className="py-16 px-6 border-t border-gray-800">
-          <BookingForm />
-        </section>
-
         {/* Testimonials Section */}
         <section className="py-16 border-t border-gray-800">
           <h2 className="text-2xl font-semibold text-center mb-8">Testimonials</h2>
@@ -280,6 +272,11 @@ export default function Home() {
           <p className="text-center text-gray-500 text-sm mt-6">
             Swipe to see more →
           </p>
+        </section>
+
+        {/* Booking Form Section */}
+        <section id="book" className="py-16 px-6 border-t border-gray-800">
+          <BookingForm />
         </section>
 
         {/* Find Us / Google Maps Section */}
