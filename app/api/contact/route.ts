@@ -109,6 +109,7 @@ export async function POST(request: Request) {
       await resend.emails.send({
         from: `Together Tattoo <inquiries@togethertattoo.com>`,
         to: recipient,
+        replyTo: email,
         subject: `New Tattoo Enquiry from ${safeName}`,
         html: `
           <h2>New Tattoo Enquiry</h2>
