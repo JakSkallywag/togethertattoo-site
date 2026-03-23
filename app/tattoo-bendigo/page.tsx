@@ -33,7 +33,7 @@ const portfolioImages = [
 export default function TattooBendigo() {
   return (
     <>
-      <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-sm border-b border-gray-800 z-50">
+      <nav className="fixed top-0 w-full bg-[#1a1a1a]/95 backdrop-blur-sm border-b border-[#2e2e2e] z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
           <Link href="/" className="flex items-center gap-2">
             <Image
@@ -41,9 +41,9 @@ export default function TattooBendigo() {
               alt="Together Tattoo logo"
               width={28}
               height={28}
-              className="invert h-7 w-auto"
+              className="invert mix-blend-screen h-7 w-auto"
             />
-            <span className="text-white font-semibold tracking-wide">Together Tattoo</span>
+            <span className="text-[#e8e4dc] font-semibold tracking-wide">Together Tattoo</span>
           </Link>
           <Link
             href="/#book"
@@ -54,50 +54,50 @@ export default function TattooBendigo() {
         </div>
       </nav>
 
-      <main className="min-h-screen bg-black text-white pt-16">
+      <main className="min-h-screen bg-[#1a1a1a] text-[#e8e4dc] pt-16">
         {/* Hero */}
         <section className="px-6 py-24 md:py-32 max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
             Tattoo Studio Near Bendigo
           </h1>
-          <p className="text-xl text-gray-300 font-light">
+          <p className="text-xl text-[#aaaaaa] font-light">
             Together Tattoo is a custom tattoo studio in Castlemaine, just 40 minutes from Bendigo by car or a short train ride on the Melbourne-Bendigo line.
           </p>
         </section>
 
         {/* About */}
-        <section className="px-6 py-16 border-t border-gray-800 max-w-3xl mx-auto">
+        <section className="px-6 py-16 border-t border-[#2e2e2e] max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold mb-6">Custom Tattoos, Close to Bendigo</h2>
-          <p className="text-gray-300 mb-4">
+          <p className="text-[#aaaaaa] mb-4">
             If you&apos;re in Bendigo or the wider Goldfields region, Together Tattoo in Castlemaine is well worth the short trip. We&apos;re about 40 minutes south on the Calder Freeway, with free parking outside the studio. Or take the train, which stops right in Castlemaine.
           </p>
-          <p className="text-gray-300 mb-4">
+          <p className="text-[#aaaaaa] mb-4">
             We&apos;re a boutique custom studio, which means every tattoo is designed specifically for you. No flash, no walk-ins. We take the time to understand what you want and create something unique.
           </p>
-          <p className="text-gray-300">
+          <p className="text-[#aaaaaa]">
             We work by appointment only, so your session is planned and unhurried. We provide a calm, comfortable environment with low lighting and chill music to make the experience as relaxing as possible.
           </p>
         </section>
 
         {/* Artists */}
-        <section className="px-6 py-16 border-t border-gray-800 max-w-3xl mx-auto">
+        <section className="px-6 py-16 border-t border-[#2e2e2e] max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold mb-6">Our Artists</h2>
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">Jak Rapmund</h3>
-              <p className="text-gray-300">
+              <p className="text-[#aaaaaa]">
                 Fine line, blackwork, and botanical tattoos. Black ink only. 13 years experience across studios in Berlin, New York, Paris, Hong Kong, and Seoul.
               </p>
-              <Link href="https://www.jakrapmund.com" className="text-gray-400 hover:text-white transition-colors text-sm mt-2 inline-block">
+              <Link href="https://www.jakrapmund.com" className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm mt-2 inline-block">
                 View Jak&apos;s portfolio and book &rarr;
               </Link>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2">Pip Tattoo</h3>
-              <p className="text-gray-300">
+              <p className="text-[#aaaaaa]">
                 Tattoo designs created using lino printing techniques. Each piece begins as a hand-carved block print, giving every tattoo a distinctive character.
               </p>
-              <Link href="https://www.piptattoo.com" className="text-gray-400 hover:text-white transition-colors text-sm mt-2 inline-block">
+              <Link href="https://www.piptattoo.com" className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm mt-2 inline-block">
                 View Pip&apos;s portfolio and book &rarr;
               </Link>
             </div>
@@ -105,7 +105,7 @@ export default function TattooBendigo() {
         </section>
 
         {/* Portfolio Sample */}
-        <section className="px-4 py-16 border-t border-gray-800">
+        <section className="px-4 py-16 border-t border-[#2e2e2e]">
           <h2 className="text-2xl font-semibold text-center mb-8">Our Work</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 max-w-4xl mx-auto">
             {portfolioImages.map((image, index) => (
@@ -123,25 +123,25 @@ export default function TattooBendigo() {
         </section>
 
         {/* Getting Here */}
-        <section className="px-6 py-16 border-t border-gray-800 max-w-3xl mx-auto">
+        <section className="px-6 py-16 border-t border-[#2e2e2e] max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold mb-6">Getting Here from Bendigo</h2>
-          <div className="space-y-4 text-gray-300">
+          <div className="space-y-4 text-[#aaaaaa]">
             <p>
-              <strong className="text-white">By car:</strong> Castlemaine is about 40 minutes south of Bendigo via the Calder Freeway. Take the Castlemaine exit and head into town. Free street parking is available right outside the studio on Halford Street.
+              <strong className="text-[#e8e4dc]">By car:</strong> Castlemaine is about 40 minutes south of Bendigo via the Calder Freeway. Take the Castlemaine exit and head into town. Free street parking is available right outside the studio on Halford Street.
             </p>
             <p>
-              <strong className="text-white">By train:</strong> The Melbourne-Bendigo V/Line service stops in Castlemaine. The trip from Bendigo takes about 30 minutes, and the studio is a short walk from the station.
+              <strong className="text-[#e8e4dc]">By train:</strong> The Melbourne-Bendigo V/Line service stops in Castlemaine. The trip from Bendigo takes about 30 minutes, and the studio is a short walk from the station.
             </p>
             <p>
-              <strong className="text-white">Good to know:</strong> We&apos;re on Dja Dja Wurrung country in the heart of Castlemaine, surrounded by great food and coffee if you want to make a day of it.
+              <strong className="text-[#e8e4dc]">Good to know:</strong> We&apos;re on Dja Dja Wurrung country in the heart of Castlemaine, surrounded by great food and coffee if you want to make a day of it.
             </p>
           </div>
         </section>
 
         {/* Map */}
-        <section className="py-16 border-t border-gray-800">
+        <section className="py-16 border-t border-[#2e2e2e]">
           <h2 className="text-2xl font-semibold text-center mb-4">Find Us</h2>
-          <p className="text-gray-400 text-center max-w-lg mx-auto px-6 mb-8">
+          <p className="text-[#888888] text-center max-w-lg mx-auto px-6 mb-8">
             Together Tattoo is based in Castlemaine, a short drive from Bendigo, Daylesford, and Kyneton.
           </p>
           <div className="max-w-4xl mx-auto px-6">
@@ -157,16 +157,16 @@ export default function TattooBendigo() {
                 title="Together Tattoo - Castlemaine, Victoria"
               />
             </div>
-            <p className="text-gray-400 text-center mt-4">
+            <p className="text-[#888888] text-center mt-4">
               Halford Street, Castlemaine, VIC
             </p>
           </div>
         </section>
 
         {/* CTA */}
-        <section className="px-6 py-16 border-t border-gray-800 text-center">
+        <section className="px-6 py-16 border-t border-[#2e2e2e] text-center">
           <h2 className="text-2xl font-semibold mb-4">Ready to Book?</h2>
-          <p className="text-gray-300 mb-8 max-w-lg mx-auto">
+          <p className="text-[#aaaaaa] mb-8 max-w-lg mx-auto">
             Send us your tattoo idea and we&apos;ll get back to you with available dates.
           </p>
           <Link
@@ -178,21 +178,21 @@ export default function TattooBendigo() {
         </section>
 
         {/* Footer */}
-        <footer className="border-t border-gray-800 py-12">
+        <footer className="border-t border-[#2e2e2e] py-12">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <div className="flex gap-6">
-                <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#e8e4dc] transition-colors">
                   @togethertattoo
                 </Link>
-                <Link href="https://instagram.com/jakrapmund" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="https://instagram.com/jakrapmund" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#e8e4dc] transition-colors">
                   @jakrapmund
                 </Link>
-                <Link href="https://instagram.com/pip.tattoo" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+                <Link href="https://instagram.com/pip.tattoo" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#e8e4dc] transition-colors">
                   @pip.tattoo
                 </Link>
               </div>
-              <p className="text-gray-500 text-sm">
+              <p className="text-[#666666] text-sm">
                 &copy; {new Date().getFullYear()} Together Tattoo. All rights reserved.
               </p>
             </div>
