@@ -61,7 +61,7 @@ export default function Home() {
             <Link href="#artists" className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm">
               Artists
             </Link>
-            <Link href="#book" className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm">
+            <Link href="#book" className="border border-[#e8e4dc] px-4 py-1.5 text-xs tracking-widest uppercase text-[#e8e4dc] hover:bg-[#e8e4dc] hover:text-[#1a1a1a] transition-colors">
               Book
             </Link>
             <Link href="#find-us" className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm">

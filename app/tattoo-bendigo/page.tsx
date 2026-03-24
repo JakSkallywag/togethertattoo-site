@@ -47,9 +47,9 @@ export default function TattooBendigo() {
           </Link>
           <Link
             href="/#book"
-            className="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium"
+            className="border border-[#e8e4dc] px-4 py-1.5 text-xs tracking-widest uppercase text-[#e8e4dc] hover:bg-[#e8e4dc] hover:text-[#1a1a1a] transition-colors"
           >
-            Book Now
+            Book
           </Link>
         </div>
       </nav>
