@@ -49,6 +49,8 @@ export async function POST(request: Request) {
       size,
       placement,
       availability,
+      budget,
+      budgetAmount,
       isCoverUp,
       referralSource,
       website,
@@ -85,7 +87,8 @@ export async function POST(request: Request) {
       (referralSource && referralSource.length > MAX_FIELD_LENGTH) ||
       (size && size.length > MAX_FIELD_LENGTH) ||
       placement.length > MAX_FIELD_LENGTH ||
-      availability.length > MAX_FIELD_LENGTH
+      availability.length > MAX_FIELD_LENGTH ||
+      (budgetAmount && budgetAmount.length > MAX_FIELD_LENGTH)
     ) {
       return NextResponse.json({ error: "Field too long" }, { status: 400 });
     }
@@ -103,6 +106,9 @@ export async function POST(request: Request) {
     const safeSize = escapeHtml(size || "");
     const safePlacement = escapeHtml(placement);
     const safeAvailability = escapeHtml(availability);
+    const safeBudget = budget === "yes"
+      ? `Yes${budgetAmount ? ` — ${escapeHtml(budgetAmount)}` : ""}`
+      : budget === "no" ? "No" : "Not sure";
 
     // Notification email(s) to artist(s)
     for (const recipient of config.notifyTo) {
@@ -127,6 +133,7 @@ export async function POST(request: Request) {
           <p><strong>Size:</strong> ${safeSize}</p>
           <p><strong>Placement:</strong> ${safePlacement}</p>
           <p><strong>Cover-up:</strong> ${isCoverUp ? "Yes" : "No"}</p>
+          <p><strong>Budget:</strong> ${safeBudget}</p>
 
           <h3>Their Description</h3>
           <p>${safeDescription}</p>
@@ -154,6 +161,7 @@ export async function POST(request: Request) {
           <li><strong>Placement:</strong> ${safePlacement}</li>
           <li><strong>Cover-up:</strong> ${isCoverUp ? "Yes" : "No"}</li>
           <li><strong>Availability:</strong> ${safeAvailability}</li>
+          <li><strong>Budget:</strong> ${safeBudget}</li>
         </ul>
         <p><strong>Your idea:</strong> ${safeDescription}</p>
 
