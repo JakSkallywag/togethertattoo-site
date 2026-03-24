@@ -67,6 +67,9 @@ export default function Home() {
             <span className="text-[#e8e4dc] font-semibold tracking-wide">Together Tattoo</span>
           </div>
           <div className="flex gap-6 items-center">
+            <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" aria-label="@togethertattoo on Instagram" className="text-[#888888] hover:text-[#e8e4dc] transition-colors flex items-center">
+              <InstagramIcon />
+            </Link>
             <Link href="#about" className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm">
               About
             </Link>
@@ -295,7 +298,10 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-[#2e2e2e] py-12">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex justify-center">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" aria-label="@togethertattoo on Instagram" className="text-[#888888] hover:text-[#e8e4dc] transition-colors flex items-center">
+                <InstagramIcon />
+              </Link>
               <p className="text-[#666666] text-sm">
                 © {new Date().getFullYear()} Together Tattoo. All rights reserved.
               </p>
