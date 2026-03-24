@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import BookingForm from "@/components/booking-form";
+import GalleryLightbox from "@/components/gallery-lightbox";
+import NewsSection from "@/components/news-section";
 
 const jakImages = [
   "02-Head-Lillys.jpg",
@@ -113,6 +115,8 @@ export default function Home() {
           </p>
         </section>
 
+        <NewsSection />
+
         {/* Separator */}
         <div className="border-t border-white/20 mx-auto max-w-6xl"></div>
 
@@ -160,9 +164,7 @@ export default function Home() {
                 </p>
                 <div className="flex gap-4 justify-center md:justify-start">
                   <Link
-                    href="https://www.jakrapmund.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#book"
                     className="bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
                   >
                     Book with Jak
@@ -178,19 +180,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-              {jakImages.map((image, index) => (
-                <div key={index} className="aspect-square relative overflow-hidden">
-                  <Image
-                    src={`/portfolio/jak/${image}`}
-                    alt={`Tattoo by Jak Rapmund - ${image.replace(/^\d+-/, "").replace(/\.[^.]+$/, "").replace(/-/g, " ")}`}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                </div>
-              ))}
-            </div>
+            <GalleryLightbox images={jakImages} folder="portfolio/jak" />
           </div>
 
           {/* Separator */}
@@ -214,9 +204,7 @@ export default function Home() {
                 </p>
                 <div className="flex gap-4 justify-center md:justify-start">
                   <Link
-                    href="https://www.piptattoo.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="#book"
                     className="bg-white text-black px-5 py-2 rounded-full hover:bg-gray-200 transition-colors font-medium text-sm"
                   >
                     Book with Pip
@@ -232,19 +220,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
-              {pipImages.map((image, index) => (
-                <div key={index} className="aspect-square relative overflow-hidden">
-                  <Image
-                    src={`/portfolio/pip/${image}`}
-                    alt={`Tattoo by Pip - ${index + 1}`}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                  />
-                </div>
-              ))}
-            </div>
+            <GalleryLightbox images={pipImages} folder="portfolio/pip" />
           </div>
         </section>
 
