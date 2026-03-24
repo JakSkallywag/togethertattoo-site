@@ -40,6 +40,16 @@ const reviewImages = [
   "review-012.png",
 ];
 
+function InstagramIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <>
@@ -173,9 +183,10 @@ export default function Home() {
                     href="https://instagram.com/jakrapmund"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm flex items-center"
+                    aria-label="@jakrapmund on Instagram"
+                    className="text-[#888888] hover:text-[#e8e4dc] transition-colors flex items-center"
                   >
-                    @jakrapmund
+                    <InstagramIcon />
                   </Link>
                 </div>
               </div>
@@ -213,9 +224,10 @@ export default function Home() {
                     href="https://instagram.com/pip.tattoo"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#888888] hover:text-[#e8e4dc] transition-colors text-sm flex items-center"
+                    aria-label="@pip.tattoo on Instagram"
+                    className="text-[#888888] hover:text-[#e8e4dc] transition-colors flex items-center"
                   >
-                    @pip.tattoo
+                    <InstagramIcon />
                   </Link>
                 </div>
               </div>
@@ -283,18 +295,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="border-t border-[#2e2e2e] py-12">
           <div className="max-w-7xl mx-auto px-6">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <div className="flex gap-6">
-                <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#e8e4dc] transition-colors">
-                  @togethertattoo
-                </Link>
-                <Link href="https://instagram.com/jakrapmund" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#e8e4dc] transition-colors">
-                  @jakrapmund
-                </Link>
-                <Link href="https://instagram.com/pip.tattoo" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#e8e4dc] transition-colors">
-                  @pip.tattoo
-                </Link>
-              </div>
+            <div className="flex justify-center">
               <p className="text-[#666666] text-sm">
                 © {new Date().getFullYear()} Together Tattoo. All rights reserved.
               </p>
