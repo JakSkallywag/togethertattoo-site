@@ -31,9 +31,7 @@ export default async function NewsSection() {
         {news.map(post => (
           <a
             key={post.slug}
-            href={`https://www.jakrapmund.com/letters/${post.slug}`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`/news/${post.slug}`}
             className="group flex-shrink-0 w-56"
           >
             <div className="w-56 h-40 bg-[#222222] overflow-hidden mb-3">
