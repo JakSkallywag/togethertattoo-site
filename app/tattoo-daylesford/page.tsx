@@ -116,13 +116,13 @@ export default function TattooDaylesford() {
         <section className="px-6 py-16 border-t border-[#c8c4bc] max-w-3xl mx-auto">
           <h2 className="text-2xl font-semibold mb-6">Custom Tattoos, Now in Daylesford</h2>
           <p className="text-[#555555] mb-4">
-            After years based in Castlemaine, Together Tattoo is bringing its custom fine line, botanical, and blackwork tattooing to Daylesford. We&apos;re setting up studio inside The Rex — a beautifully restored Spanish Art Deco building on Vincent Street, now home to a growing community of artists, makers, and creatives.
+            Together Tattoo is moving to Daylesford — setting up studio inside The Rex, a beautifully restored Spanish Art Deco building on Vincent Street, now home to a growing community of artists, makers, and creatives.
           </p>
           <p className="text-[#555555] mb-4">
-            We specialise in considered, custom work: fine line botanical pieces, blackwork, and lino print-inspired designs. Every tattoo is designed for you — we don&apos;t do flash or walk-ins.
+            We specialise in custom fine line, botanical, and blackwork tattooing, as well as flash and walk-ins. Whether you have a detailed concept in mind or want to pick something off the wall, we&apos;ve got you.
           </p>
           <p className="text-[#555555]">
-            We work by appointment only, so your session is unhurried and the space is calm. Low lighting, chill music, no rush.
+            The space is calm, the music is chill, and there&apos;s no rush — just good tattooing in a great building.
           </p>
         </section>
 
