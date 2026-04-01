@@ -70,7 +70,7 @@ export default async function NewsPost({ params }: { params: Promise<{ slug: str
           {post.image && (
             <div className="w-full aspect-[16/9] relative overflow-hidden mb-8">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
+              <img src={post.image.startsWith('/') ? `https://www.jakrapmund.com${post.image}` : post.image} alt={post.title} className="w-full h-full object-cover" />
             </div>
           )}
 
@@ -80,7 +80,7 @@ export default async function NewsPost({ params }: { params: Promise<{ slug: str
             <p className="text-[#888888] text-lg mb-12 leading-relaxed">{post.description}</p>
           )}
           <div
-            className="prose prose-invert prose-sm max-w-none text-[#aaaaaa] leading-relaxed"
+            className="news-content"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </article>

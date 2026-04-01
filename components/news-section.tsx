@@ -38,7 +38,7 @@ export default async function NewsSection() {
               {post.image ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img
-                  src={post.image}
+                  src={post.image.startsWith('/') ? `https://www.jakrapmund.com${post.image}` : post.image}
                   alt={post.title}
                   className="w-full h-full object-cover group-hover:opacity-80 transition-opacity"
                 />

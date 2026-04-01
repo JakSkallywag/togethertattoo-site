@@ -29,3 +29,37 @@ h1, h2, h3, h4, h5, h6 {
 html {
   scroll-behavior: smooth;
 }
+
+.news-content {
+  color: #aaaaaa;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  max-width: none;
+}
+
+.news-content p { margin-bottom: 1.25em; }
+.news-content h1, .news-content h2, .news-content h3, .news-content h4 {
+  color: #e8e4dc;
+  margin-top: 1.75em;
+  margin-bottom: 0.75em;
+  font-family: var(--font-merriweather), serif;
+}
+.news-content h1 { font-size: 1.5rem; }
+.news-content h2 { font-size: 1.25rem; }
+.news-content h3 { font-size: 1.1rem; }
+.news-content ul, .news-content ol { padding-left: 1.5em; margin-bottom: 1.25em; }
+.news-content li { margin-bottom: 0.4em; }
+.news-content ul { list-style-type: disc; }
+.news-content ol { list-style-type: decimal; }
+.news-content a { color: #e8e4dc; text-decoration: underline; }
+.news-content a:hover { color: #ffffff; }
+.news-content strong { color: #e8e4dc; font-weight: 600; }
+.news-content em { font-style: italic; }
+.news-content blockquote {
+  border-left: 2px solid #2e2e2e;
+  padding-left: 1em;
+  color: #666666;
+  margin: 1.5em 0;
+}
+.news-content img { max-width: 100%; height: auto; margin: 1.5em 0; }
+.news-content hr { border-color: #2e2e2e; margin: 2em 0; }
