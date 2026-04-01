@@ -302,6 +302,14 @@ export default function Home() {
               <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" aria-label="@togethertattoo on Instagram" className="text-[#888888] hover:text-[#e8e4dc] transition-colors flex items-center">
                 <InstagramIcon />
               </Link>
+              <Link
+                href="https://reference-tool.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#666666] hover:text-[#e8e4dc] transition-colors text-sm"
+              >
+                Reference Tool →
+              </Link>
               <p className="text-[#666666] text-sm">
                 © {new Date().getFullYear()} Together Tattoo. All rights reserved.
               </p>
