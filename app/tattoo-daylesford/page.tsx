@@ -3,18 +3,21 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Tattoo Studio Near Daylesford | Together Tattoo, Castlemaine",
+  title: "Tattoo Studio in Daylesford | Fine Line, Botanical & Blackwork | Together Tattoo",
   description:
-    "Looking for a tattoo artist near Daylesford? Together Tattoo is a custom tattoo studio in Castlemaine, just 30 minutes from Daylesford. Fine line, blackwork, botanical, and lino print-inspired tattoos.",
+    "Together Tattoo is opening in Daylesford. Fine line, botanical, and blackwork tattoos by Jak Rapmund and Pip Tattoo — inside The Rex, Vincent Street, Daylesford.",
   keywords: [
+    "tattoos Daylesford",
     "tattoo Daylesford",
+    "tattoo studio Daylesford",
+    "fine line tattoos Daylesford",
+    "fine line tattoo Daylesford",
+    "botanical tattoo Daylesford",
+    "blackwork tattoo Daylesford",
     "tattoo artist Daylesford",
-    "tattoo studio near Daylesford",
-    "Daylesford tattoo",
     "custom tattoo Daylesford",
-    "tattoo Hepburn Springs",
-    "tattoo Castlemaine",
     "Together Tattoo",
+    "The Rex Daylesford",
   ],
   alternates: {
     canonical: "/tattoo-daylesford",
@@ -55,27 +58,36 @@ export default function TattooDaylesford() {
       </nav>
 
       <main className="min-h-screen bg-[#1a1a1a] text-[#e8e4dc] pt-16">
+
+        {/* Announcement Banner */}
+        <div className="bg-[#2e2e2e] border-b border-[#3e3e3e] text-center py-3 px-6">
+          <p className="text-sm text-[#aaaaaa]">
+            <span className="text-[#e8e4dc] font-medium">We&apos;re moving to Daylesford.</span>{" "}
+            Opening mid-2026 at The Rex, Vincent Street — bookings open now.
+          </p>
+        </div>
+
         {/* Hero */}
         <section className="px-6 py-24 md:py-32 max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
-            Tattoo Studio Near Daylesford
+            Fine Line, Botanical & Blackwork Tattoos in Daylesford
           </h1>
           <p className="text-xl text-[#aaaaaa] font-light">
-            Together Tattoo is a custom tattoo studio in Castlemaine, just a 30-minute drive from Daylesford and Hepburn Springs.
+            Together Tattoo is opening a studio in Daylesford — inside The Rex, a restored 1928 Art Deco building on Vincent Street in the heart of town.
           </p>
         </section>
 
         {/* About */}
         <section className="px-6 py-16 border-t border-[#2e2e2e] max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6">Custom Tattoos, Close to Daylesford</h2>
+          <h2 className="text-2xl font-semibold mb-6">Custom Tattoos, Now in Daylesford</h2>
           <p className="text-[#aaaaaa] mb-4">
-            If you&apos;re based in Daylesford, Hepburn Springs, or anywhere in the Hepburn Shire, we&apos;re one of the closest custom tattoo studios to you. Castlemaine is an easy 30-minute drive along the Midland Highway, with free parking right outside the studio.
+            After years based in Castlemaine, Together Tattoo is bringing its custom fine line, botanical, and blackwork tattooing to Daylesford. We&apos;re setting up studio inside The Rex — a beautifully restored Spanish Art Deco building on Vincent Street, now home to a growing community of artists, makers, and creatives.
           </p>
           <p className="text-[#aaaaaa] mb-4">
-            Many of our clients from Daylesford combine their tattoo session with a day in Castlemaine. There are plenty of great cafes, galleries, and shops to explore before or after your appointment.
+            We specialise in considered, custom work: fine line botanical pieces, blackwork, and lino print-inspired designs. Every tattoo is designed for you — we don&apos;t do flash or walk-ins.
           </p>
           <p className="text-[#aaaaaa]">
-            We work by appointment only, so your session is planned and unhurried. We provide a calm, comfortable environment with low lighting and chill music to make the experience as relaxing as possible.
+            We work by appointment only, so your session is unhurried and the space is calm. Low lighting, chill music, no rush.
           </p>
         </section>
 
@@ -122,49 +134,47 @@ export default function TattooDaylesford() {
           </div>
         </section>
 
-        {/* Getting Here */}
+        {/* The Rex */}
         <section className="px-6 py-16 border-t border-[#2e2e2e] max-w-3xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6">Getting Here from Daylesford</h2>
-          <div className="space-y-4 text-[#aaaaaa]">
-            <p>
-              <strong className="text-[#e8e4dc]">By car:</strong> Castlemaine is about 30 minutes from Daylesford via the Midland Highway. Head north through Hepburn Springs and follow signs to Castlemaine. Free street parking is available right outside the studio on Halford Street.
-            </p>
-            <p>
-              <strong className="text-[#e8e4dc]">Good to know:</strong> We&apos;re on Dja Dja Wurrung country in the heart of Castlemaine, surrounded by great food and coffee if you want to make a day of it.
-            </p>
-          </div>
+          <h2 className="text-2xl font-semibold mb-6">Inside The Rex</h2>
+          <p className="text-[#aaaaaa] mb-4">
+            The Rex is a landmark 1928 Spanish Art Deco building on Vincent Street — Daylesford&apos;s main street. Originally a cinema, it&apos;s been beautifully restored as a creative cultural hub, home to artists, galleries, a community cinema, and independent businesses.
+          </p>
+          <p className="text-[#aaaaaa]">
+            It&apos;s the kind of building that makes you slow down. We&apos;re glad to be part of it.
+          </p>
         </section>
 
-        {/* Map */}
+        {/* Location */}
         <section className="py-16 border-t border-[#2e2e2e]">
-          <h2 className="text-2xl font-semibold text-center mb-4">Find Us</h2>
+          <h2 className="text-2xl font-semibold text-center mb-4">Find Us in Daylesford</h2>
           <p className="text-[#888888] text-center max-w-lg mx-auto px-6 mb-8">
-            Together Tattoo is based in Castlemaine, a short drive from Daylesford, Kyneton, and Bendigo.
+            The Rex, Vincent Street, Daylesford VIC 3460 — right in the centre of town.
           </p>
           <div className="max-w-4xl mx-auto px-6">
             <div className="aspect-[16/9] rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d100867.3795312821!2d144.982016!3d-37.8109952!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad73732da393915%3A0x2686d805177e7676!2sTogether%20Tattoo!5e0!3m2!1sen!2sau!4v1770575181443!5m2!1sen!2sau"
+                src="https://maps.google.com/maps?q=47+Vincent+Street,+Daylesford+VIC+3460&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Together Tattoo - Castlemaine, Victoria"
+                title="Together Tattoo - The Rex, Daylesford, Victoria"
               />
             </div>
             <p className="text-[#888888] text-center mt-4">
-              Halford Street, Castlemaine, VIC
+              The Rex, 47 Vincent Street, Daylesford VIC
             </p>
           </div>
         </section>
 
         {/* CTA */}
         <section className="px-6 py-16 border-t border-[#2e2e2e] text-center">
-          <h2 className="text-2xl font-semibold mb-4">Ready to Book?</h2>
+          <h2 className="text-2xl font-semibold mb-4">Book a Tattoo in Daylesford</h2>
           <p className="text-[#aaaaaa] mb-8 max-w-lg mx-auto">
-            Send us your tattoo idea and we&apos;ll get back to you with available dates.
+            We&apos;re taking bookings now for our Daylesford studio. Send us your idea and we&apos;ll be in touch with dates.
           </p>
           <Link
             href="/#book"
