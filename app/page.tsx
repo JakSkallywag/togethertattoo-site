@@ -303,7 +303,7 @@ export default function Home() {
                 <InstagramIcon />
               </Link>
               <Link
-                href="https://reference-tool.vercel.app"
+                href="https://reference.togethertattoo.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#666666] hover:text-[#e8e4dc] transition-colors text-sm"
