@@ -299,9 +299,6 @@ export default function Home() {
         <footer className="border-t border-[#2e2e2e] py-12">
           <div className="max-w-7xl mx-auto px-6">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" aria-label="@togethertattoo on Instagram" className="text-[#888888] hover:text-[#e8e4dc] transition-colors flex items-center">
-                <InstagramIcon />
-              </Link>
               <Link
                 href="https://reference.togethertattoo.com"
                 target="_blank"
@@ -313,6 +310,9 @@ export default function Home() {
               <p className="text-[#666666] text-sm">
                 © {new Date().getFullYear()} Together Tattoo. All rights reserved.
               </p>
+              <Link href="https://instagram.com/togethertattoo" target="_blank" rel="noopener noreferrer" aria-label="@togethertattoo on Instagram" className="text-[#888888] hover:text-[#e8e4dc] transition-colors flex items-center">
+                <InstagramIcon />
+              </Link>
             </div>
           </div>
         </footer>
