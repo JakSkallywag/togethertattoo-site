@@ -87,6 +87,7 @@ export default function BookingForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [attempted, setAttempted] = useState(false);
 
   const [honeypot, setHoneypot] = useState("");
 
@@ -109,8 +110,12 @@ export default function BookingForm() {
     isOver18: false,
   });
 
-  const nextStep = () => setStep(s => Math.min(s + 1, TOTAL_STEPS));
-  const prevStep = () => setStep(s => Math.max(s - 1, 1));
+  const nextStep = () => {
+    if (!isStepValid()) { setAttempted(true); return; }
+    setAttempted(false);
+    setStep(s => Math.min(s + 1, TOTAL_STEPS));
+  };
+  const prevStep = () => { setAttempted(false); setStep(s => Math.max(s - 1, 1)); };
 
   const isStepValid = (): boolean => {
     switch (step) {
@@ -121,20 +126,16 @@ export default function BookingForm() {
       case 5: return formData.description.trim().length > 10;
       case 6: return formData.availability !== "";
       case 7: return formData.budget !== "";
-      case 8: {
-        const pronounValid = formData.pronouns !== "" &&
-          (formData.pronouns !== "other" || formData.pronounsOther.trim() !== "");
+      case 8:
         return formData.name.trim() !== "" &&
                formData.email.includes("@") &&
-               pronounValid &&
                formData.isOver18;
-      }
       default: return false;
     }
   };
 
   const handleSubmit = async () => {
-    if (!isStepValid()) return;
+    if (!isStepValid()) { setAttempted(true); return; }
 
     setIsSubmitting(true);
     setError("");
@@ -175,7 +176,7 @@ export default function BookingForm() {
 
       setIsSubmitted(true);
     } catch {
-      setError("Something went wrong. Please try again or email us directly at togethertattoo@proton.me");
+      setError("Something went wrong sending your enquiry. Please email togethertattoo@proton.me directly and we'll get back to you.");
     } finally {
       setIsSubmitting(false);
     }
@@ -183,12 +184,12 @@ export default function BookingForm() {
 
   const ProgressBar = () => (
     <div className="mb-8">
-      <div className="flex justify-between text-xs text-gray-500 mb-2">
+      <div className="flex justify-between text-xs text-gray-600 mb-2">
         <span>Step {step} of {TOTAL_STEPS}</span>
       </div>
-      <div className="h-1 bg-gray-800 rounded-full overflow-hidden">
+      <div className="h-1 bg-gray-300 rounded-full overflow-hidden">
         <div
-          className="h-full bg-white transition-all duration-300"
+          className="h-full bg-[#1a1a1a] transition-all duration-300"
           style={{ width: `${(step / TOTAL_STEPS) * 100}%` }}
         />
       </div>
@@ -198,8 +199,8 @@ export default function BookingForm() {
   const optionButton = (isSelected: boolean) => `
     w-full p-4 text-left rounded-lg border transition-colors
     ${isSelected
-      ? "border-white bg-white text-black"
-      : "border-gray-700 hover:border-gray-500"
+      ? "border-[#1a1a1a] bg-[#1a1a1a] text-[#e8e4dc]"
+      : "border-gray-400 hover:border-gray-600"
     }
   `;
 
@@ -207,9 +208,9 @@ export default function BookingForm() {
     px-6 py-3 rounded-lg font-medium transition-colors
     ${isPrimary
       ? isDisabled
-        ? "bg-gray-700 text-gray-500 cursor-not-allowed"
-        : "bg-white text-black hover:bg-gray-200"
-      : "border border-gray-700 hover:border-gray-500"
+        ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+        : "bg-[#1a1a1a] text-[#e8e4dc] hover:bg-[#333333]"
+      : "border border-gray-400 hover:border-gray-600"
     }
   `;
 
@@ -218,7 +219,7 @@ export default function BookingForm() {
       <div className="max-w-xl mx-auto text-center py-12">
         <div className="text-4xl mb-4">✓</div>
         <h2 className="text-2xl font-semibold mb-4">Thank you!</h2>
-        <p className="text-gray-400">
+        <p className="text-gray-600">
           We&apos;ve received your enquiry. Please check your email for confirmation and next steps.
         </p>
       </div>
@@ -329,7 +330,7 @@ export default function BookingForm() {
             <div>
               <button
                 onClick={() => setFormData({ ...formData, placementArea: "", placement: "" })}
-                className="text-sm text-gray-400 hover:text-white mb-3 flex items-center gap-1"
+                className="text-sm text-gray-600 hover:text-[#1a1a1a] mb-3 flex items-center gap-1"
               >
                 ← Change area
               </button>
@@ -351,10 +352,10 @@ export default function BookingForm() {
 
           {formData.placementArea === "not-sure" && (
             <div className="text-center py-4">
-              <p className="text-gray-400 mb-3">No worries! We&apos;ll help you decide on placement.</p>
+              <p className="text-gray-600 mb-3">No worries! We&apos;ll help you decide on placement.</p>
               <button
                 onClick={() => setFormData({ ...formData, placementArea: "", placement: "" })}
-                className="text-sm text-gray-400 hover:text-white"
+                className="text-sm text-gray-600 hover:text-[#1a1a1a]"
               >
                 ← Go back
               </button>
@@ -371,11 +372,14 @@ export default function BookingForm() {
             value={formData.description}
             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
             placeholder="Tell us about the tattoo you have in mind — subject, style, any details that matter to you"
-            className="w-full h-32 p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none resize-none"
+            className="w-full h-32 p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none resize-none"
           />
-          <p className="text-gray-500 text-xs mt-2">
+          <p className="text-gray-600 text-xs mt-2">
             Don&apos;t worry about reference images yet — we&apos;ll ask for those in our reply
           </p>
+          {attempted && formData.description.trim().length <= 10 && (
+            <p className="text-red-500 text-sm mt-2">Please describe your idea in a bit more detail — even a sentence helps.</p>
+          )}
         </div>
       )}
 
@@ -383,7 +387,7 @@ export default function BookingForm() {
       {step === 6 && (
         <div>
           <label className="block text-sm font-medium mb-2">When works best for you?</label>
-          <p className="text-gray-500 text-sm mb-4">We&apos;re flexible with scheduling, but it helps to know your preference</p>
+          <p className="text-gray-600 text-sm mb-4">We&apos;re flexible with scheduling, but it helps to know your preference</p>
           <div className="flex flex-col gap-3">
             {availabilityOptions.map(a => (
               <button
@@ -428,7 +432,7 @@ export default function BookingForm() {
               value={formData.budgetAmount}
               onChange={(e) => setFormData({ ...formData, budgetAmount: e.target.value })}
               placeholder="Amount (optional, e.g. $300)"
-              className="w-full mt-4 p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
+              className="w-full mt-4 p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
             />
           )}
         </div>
@@ -439,29 +443,39 @@ export default function BookingForm() {
         <div>
           <label className="block text-sm font-medium mb-4">Your details</label>
           <div className="space-y-4">
-            <input
-              type="text"
-              value={formData.name}
-              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-              placeholder="Your name"
-              className="w-full p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
-            />
-            <input
-              type="email"
-              value={formData.email}
-              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-              placeholder="you@example.com"
-              className="w-full p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
-            />
+            <div>
+              <input
+                type="text"
+                value={formData.name}
+                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                placeholder="Your name"
+                className="w-full p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
+              />
+              {attempted && formData.name.trim() === "" && (
+                <p className="text-red-500 text-sm mt-1">Please enter your name.</p>
+              )}
+            </div>
+            <div>
+              <input
+                type="email"
+                value={formData.email}
+                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                placeholder="you@example.com"
+                className="w-full p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
+              />
+              {attempted && !formData.email.includes("@") && (
+                <p className="text-red-500 text-sm mt-1">Please enter a valid email address.</p>
+              )}
+            </div>
             <input
               type="tel"
               value={formData.phone}
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               placeholder="Phone (optional)"
-              className="w-full p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
+              className="w-full p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
             />
             <div>
-              <p className="text-sm text-gray-400 mb-2">Pronouns</p>
+              <p className="text-sm text-gray-600 mb-2">Pronouns (optional)</p>
               <div className="grid grid-cols-2 gap-3">
                 {pronounOptions.map(p => (
                   <button
@@ -479,7 +493,7 @@ export default function BookingForm() {
                   value={formData.pronounsOther}
                   onChange={(e) => setFormData({ ...formData, pronounsOther: e.target.value })}
                   placeholder="Please specify"
-                  className="w-full mt-3 p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
+                  className="w-full mt-3 p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
                 />
               )}
             </div>
@@ -489,7 +503,7 @@ export default function BookingForm() {
                 value={formData.referralSource}
                 onChange={(e) => setFormData({ ...formData, referralSource: e.target.value })}
                 placeholder="How did you hear about us? (optional)"
-                className="w-full p-4 bg-transparent border border-gray-700 rounded-lg focus:border-white focus:outline-none"
+                className="w-full p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
               />
             </div>
             <div className="pt-2">
@@ -502,9 +516,16 @@ export default function BookingForm() {
                 />
                 <span className="text-sm">I confirm I am 18 years or older</span>
               </label>
+              {attempted && !formData.isOver18 && (
+                <p className="text-red-500 text-sm mt-2">You must be 18 or older to book a tattoo.</p>
+              )}
             </div>
           </div>
         </div>
+      )}
+
+      {attempted && !isStepValid() && [1, 2, 3, 4, 6, 7].includes(step) && (
+        <p className="text-red-500 text-sm mt-4">Please make a selection above to continue.</p>
       )}
 
       {error && (
@@ -525,16 +546,15 @@ export default function BookingForm() {
         {step < TOTAL_STEPS ? (
           <button
             onClick={nextStep}
-            disabled={!isStepValid()}
-            className={navButton(true, !isStepValid())}
+            className={navButton(true, false)}
           >
             Continue
           </button>
         ) : (
           <button
             onClick={handleSubmit}
-            disabled={!isStepValid() || isSubmitting}
-            className={navButton(true, !isStepValid() || isSubmitting)}
+            disabled={isSubmitting}
+            className={navButton(true, isSubmitting)}
           >
             {isSubmitting ? "Sending..." : "Submit"}
           </button>
