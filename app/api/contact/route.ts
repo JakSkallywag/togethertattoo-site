@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
       .join("\n");
 
     await resend.emails.send({
-      from: "Booking Form <noreply@togethertattoo.com.au>",
+      from: "Booking Form <noreply@togethertattoo.com>",
       to: "togethertattoo@proton.me",
       replyTo: email,
       subject: `New booking enquiry from ${name}`,
