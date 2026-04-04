@@ -474,29 +474,16 @@ export default function BookingForm() {
               placeholder="Phone (optional)"
               className="w-full p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
             />
-            <div>
-              <p className="text-sm text-gray-600 mb-2">Pronouns (optional)</p>
-              <div className="grid grid-cols-2 gap-3">
-                {pronounOptions.map(p => (
-                  <button
-                    key={p.value}
-                    onClick={() => setFormData({ ...formData, pronouns: p.value, pronounsOther: p.value !== "other" ? "" : formData.pronounsOther })}
-                    className={optionButton(formData.pronouns === p.value)}
-                  >
-                    {p.label}
-                  </button>
-                ))}
-              </div>
-              {formData.pronouns === "other" && (
-                <input
-                  type="text"
-                  value={formData.pronounsOther}
-                  onChange={(e) => setFormData({ ...formData, pronounsOther: e.target.value })}
-                  placeholder="Please specify"
-                  className="w-full mt-3 p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
-                />
-              )}
-            </div>
+            <select
+              value={formData.pronouns}
+              onChange={(e) => setFormData({ ...formData, pronouns: e.target.value, pronounsOther: "" })}
+              className="w-full p-3 bg-[#e8e4dc] border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none text-sm text-[#666666]"
+            >
+              <option value="">Pronouns (optional)</option>
+              {pronounOptions.map(p => (
+                <option key={p.value} value={p.value}>{p.label}</option>
+              ))}
+            </select>
             <div>
               <input
                 type="text"
