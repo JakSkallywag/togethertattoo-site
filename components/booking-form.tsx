@@ -176,7 +176,7 @@ export default function BookingForm() {
 
       setIsSubmitted(true);
     } catch {
-      setError("Something went wrong sending your enquiry. Please email togethertattoo@proton.me directly and we'll get back to you.");
+      setError("Something went wrong. Please try again.");
     } finally {
       setIsSubmitting(false);
     }

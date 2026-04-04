@@ -59,12 +59,12 @@ export async function POST(req: NextRequest) {
       text: lines,
     });
 
-    await resend.emails.send({
+    resend.emails.send({
       from: "Together Tattoo <noreply@togethertattoo.com>",
       to: email,
       subject: "We've received your enquiry",
       text: `Hi ${name},\n\nThanks for reaching out — we've got your enquiry and will be in touch within a few days to discuss your idea and arrange a time.\n\nIn the meantime, feel free to browse our work at togethertattoo.com.\n\nTalk soon,\nJak & Pip\nTogether Tattoo`,
-    });
+    }).catch((err) => console.error("Confirmation email failed:", err));
 
     return NextResponse.json({ ok: true });
   } catch (err) {
