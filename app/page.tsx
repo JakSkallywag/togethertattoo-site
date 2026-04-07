@@ -90,6 +90,15 @@ export default function Home() {
 
       <main className="min-h-screen bg-[#e8e4dc] text-[#1a1a1a] pt-16">
 
+        {/* Announcement Banner */}
+        <div className="bg-[#1a1a1a] text-center py-3 px-6">
+          <p className="text-sm text-[#aaaaaa]">
+            <span className="text-[#e8e4dc] font-medium">We&apos;re moving to Daylesford in May.</span>{" "}
+            Inside The Rex, 47 Vincent Street —{" "}
+            <a href="#book" className="text-[#e8e4dc] underline underline-offset-2">taking bookings now</a>.
+          </p>
+        </div>
+
         {/* Hero Section */}
         <section className="flex flex-col items-center justify-center px-6 py-24 md:py-32">
           <h1 className="flex items-center justify-center gap-4 md:gap-8 mb-8 w-full max-w-4xl">

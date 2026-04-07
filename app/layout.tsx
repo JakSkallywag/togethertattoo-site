@@ -16,8 +16,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.togethertattoo.com"),
-  title: "Together Tattoo | Custom Tattoo Studio | Castlemaine, VIC",
-  description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and central Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos by Jak Rapmund and Pip Tattoo.",
+  title: "Together Tattoo | Tattoo Studio | Daylesford, VIC",
+  description: "Tattoo studio in Daylesford, Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos by Jak Rapmund and Pip Tattoo. Inside The Rex, 47 Vincent Street.",
   keywords: [
     "tattoo studio Castlemaine",
     "tattoo artist Castlemaine",
@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: "en_AU",
     url: "https://www.togethertattoo.com",
     siteName: "Together Tattoo",
-    title: "Together Tattoo | Custom Tattoo Studio | Castlemaine, VIC",
-    description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and central Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos.",
+    title: "Together Tattoo | Tattoo Studio | Daylesford, VIC",
+    description: "Tattoo studio in Daylesford, Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos. Inside The Rex, 47 Vincent Street.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Together Tattoo | Custom Tattoo Studio | Castlemaine",
-    description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and surrounds.",
+    title: "Together Tattoo | Tattoo Studio | Daylesford",
+    description: "Tattoo studio in Daylesford, Victoria. Fine line, blackwork, botanical tattoos. Inside The Rex, 47 Vincent Street.",
   },
   verification: {
     google: "qAxdcXxJnE0CfTUPYTguTHV_214x1nu-QoV5GTkr6xM",
@@ -78,7 +78,7 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "TattooParlor",
     name: "Together Tattoo",
-    description: "Custom tattoo studio in Castlemaine, Victoria, serving Daylesford, Kyneton, Bendigo and central Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos.",
+    description: "Tattoo studio in Daylesford, Victoria. Fine line, blackwork, botanical, and lino print-inspired tattoos. Inside The Rex, 47 Vincent Street.",
     url: "https://www.togethertattoo.com",
     sameAs: [
       "https://instagram.com/togethertattoo",
@@ -87,10 +87,10 @@ export default function RootLayout({
     ],
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Halford Street",
-      addressLocality: "Castlemaine",
+      streetAddress: "47 Vincent Street",
+      addressLocality: "Daylesford",
       addressRegion: "VIC",
-      postalCode: "3450",
+      postalCode: "3460",
       addressCountry: "AU",
     },
     areaServed: [

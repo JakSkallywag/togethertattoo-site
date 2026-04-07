@@ -1,6 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      { source: '/tattoo-daylesford', destination: '/', permanent: true },
+      { source: '/tattoo-kyneton', destination: '/', permanent: true },
+      { source: '/tattoo-bendigo', destination: '/', permanent: true },
+    ];
+  },
   async headers() {
     return [
       {
