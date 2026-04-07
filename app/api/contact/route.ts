@@ -17,8 +17,6 @@ export async function POST(req: NextRequest) {
       size,
       placement,
       availability,
-      budget,
-      budgetAmount,
       isCoverUp,
       referralSource,
       website, // honeypot
@@ -32,11 +30,6 @@ export async function POST(req: NextRequest) {
     const { artist } = body;
     const studioEmail =
       artist === "jak" ? "info@jakrapmund.com" : "togethertattoo@proton.me";
-
-    const budgetLine =
-      budget === "yes"
-        ? `Budget: Yes${budgetAmount ? ` — ${budgetAmount}` : ""}`
-        : `Budget: ${budget === "no" ? "No" : "Not sure"}`;
 
     const lines = [
       `Artist: ${artistLabel}`,
@@ -53,7 +46,6 @@ export async function POST(req: NextRequest) {
       description,
       ``,
       `Availability: ${availability}`,
-      budgetLine,
       referralSource ? `Referral: ${referralSource}` : null,
     ]
       .filter((l) => l !== null)
@@ -80,7 +72,6 @@ export async function POST(req: NextRequest) {
       `Placement: ${placement}`,
       `Cover-up: ${isCoverUp ? "Yes" : "No"}`,
       `Availability: ${availability}`,
-      budgetLine,
       ``,
       `Your idea: ${description}`,
       ``,

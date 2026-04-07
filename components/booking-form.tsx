@@ -69,8 +69,6 @@ type FormData = {
   placementArea: string;
   placement: string;
   availability: string;
-  budget: string;
-  budgetAmount: string;
   name: string;
   email: string;
   phone: string;
@@ -80,7 +78,7 @@ type FormData = {
   isOver18: boolean;
 };
 
-const TOTAL_STEPS = 8;
+const TOTAL_STEPS = 7;
 
 export default function BookingForm() {
   const [step, setStep] = useState(1);
@@ -99,8 +97,6 @@ export default function BookingForm() {
     placementArea: "",
     placement: "",
     availability: "",
-    budget: "",
-    budgetAmount: "",
     name: "",
     email: "",
     phone: "",
@@ -125,8 +121,7 @@ export default function BookingForm() {
       case 4: return formData.placement !== "" && formData.placementArea !== "";
       case 5: return formData.description.trim().length > 10;
       case 6: return formData.availability !== "";
-      case 7: return formData.budget !== "";
-      case 8:
+      case 7:
         return formData.name.trim() !== "" &&
                formData.email.includes("@") &&
                formData.isOver18;
@@ -164,8 +159,6 @@ export default function BookingForm() {
           size: selectedSize?.label || formData.size,
           placement: selectedPlacement?.label || formData.placement,
           availability: selectedAvailability?.label || formData.availability,
-          budget: formData.budget,
-          budgetAmount: formData.budgetAmount,
           isCoverUp: formData.isCoverUp,
           referralSource: formData.referralSource,
           website: honeypot,
@@ -402,43 +395,7 @@ export default function BookingForm() {
         </div>
       )}
 
-      {/* Step 7: Budget */}
-      {step === 7 && (
-        <div>
-          <label className="block text-sm font-medium mb-4">Do you need to stick within a budget?</label>
-          <div className="flex flex-col gap-3">
-            <button
-              onClick={() => setFormData({ ...formData, budget: "yes" })}
-              className={optionButton(formData.budget === "yes")}
-            >
-              Yes, I have a budget in mind
-            </button>
-            <button
-              onClick={() => setFormData({ ...formData, budget: "no", budgetAmount: "" })}
-              className={optionButton(formData.budget === "no")}
-            >
-              No, not really
-            </button>
-            <button
-              onClick={() => setFormData({ ...formData, budget: "not-sure", budgetAmount: "" })}
-              className={optionButton(formData.budget === "not-sure")}
-            >
-              I&apos;m not sure
-            </button>
-          </div>
-          {formData.budget === "yes" && (
-            <input
-              type="text"
-              value={formData.budgetAmount}
-              onChange={(e) => setFormData({ ...formData, budgetAmount: e.target.value })}
-              placeholder="Amount (optional, e.g. $300)"
-              className="w-full mt-4 p-4 bg-transparent border border-gray-400 rounded-lg focus:border-[#1a1a1a] focus:outline-none"
-            />
-          )}
-        </div>
-      )}
-
-      {/* Step 8: Contact Details */}
+      {/* Step 7: Contact Details */}
       {step === 8 && (
         <div>
           <label className="block text-sm font-medium mb-4">Your details</label>
@@ -511,7 +468,7 @@ export default function BookingForm() {
         </div>
       )}
 
-      {attempted && !isStepValid() && [1, 2, 3, 4, 6, 7].includes(step) && (
+      {attempted && !isStepValid() && [1, 2, 3, 4, 6].includes(step) && (
         <p className="text-red-500 text-sm mt-4">Please make a selection above to continue.</p>
       )}
 
